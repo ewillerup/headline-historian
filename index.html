@@ -9,7 +9,6 @@
     <form>
       <label for="input">Enter a headline or article link:</label>
       <input type="text" id="input" name="input"><br><br>
-      <button type="button" onclick="sendRequest()">Submit</button>
     </form>
     <div id="response"></div>
     <button id="apiButton">Call API</button>
@@ -23,8 +22,7 @@
             "Access-Control-Allow-Origin": "*"
           },
           body: JSON.stringify({
-            "host": 
-            "path": 
+            "headline": content-3
           })
         });
         const data = await response.json();
