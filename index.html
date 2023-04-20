@@ -26,9 +26,8 @@
           })
         });
         const data = await response.json();
-        data = data.body;
         console.log(data);
-        document.getElementById("response").innerText = data;
+        document.getElementById("response").innerText = data.body;
       });
     </script>
   </body>
