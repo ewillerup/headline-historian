@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>API Gateway Example</title>
+  </head>
+  <body>
+    <h1>API Gateway Example</h1>
+    <button id="apiButton">Call API</button>
+    <script>
+      const button = document.getElementById("apiButton");
+      button.addEventListener("click", async () => {
+        const response = await fetch("https://m8hse7s2pi.execute-api.us-east-1.amazonaws.com/firstDeploy", {
+          method: "POST",
+          body: JSON.stringify({
+            headline: "content-2"
+          })
+        });
+        const data = await response.json();
+        console.log(data);
+      });
+    </script>
+  </body>
+</html>
