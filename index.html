@@ -2,16 +2,21 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>API Gateway Example</title>
+    <title>Headline Historian</title>
+    <link rel="stylesheet" href="stylesheet.css"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   </head>
+
   <body>
-    <h1>API Gateway Example</h1>
-    <form>
-      <label for="input">Enter a headline or article link:</label>
-      <input type="text" id="input" name="input"><br><br>
-    </form>
+    <h1>Headline Historian</h1>
+    <h2><i>Understand the world better</i></h2>
+      <input type="text" id="input" name="input" placeholder="Link or headline">
     <div id="response"></div>
-    <button id="apiButton">Call API</button>
+    <br>
+    <button id="apiButton">Generate</button>
+
+    <p id=responseBody>Awaiting your headline...</p>
+
     <script>
       const button = document.getElementById("apiButton");
       button.addEventListener("click", async () => {
@@ -28,7 +33,12 @@
         });
         const data = await response.json();
         console.log(data);
-        document.getElementById("response").innerText = data.body;
+        var paragraph = document.getElementById("responseBody");
+        if (data.body != "undefined") {
+          paragraph.innerHTML = data.body;
+        } else {
+          paragraph.innerHTML = "There was an error somewhere along the chain."
+        }
       });
     </script>
   </body>
