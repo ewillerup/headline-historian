@@ -26,19 +26,18 @@
           headers: {
             "Content-Type": "application/json"
           },
-          // body: JSON.stringify({
-          //   headline: input
-          // })
-          body: "Help"
+          body: JSON.stringify({
+            headline: input
+          })
         });
         const data = await response.json();
         console.log(data);
         var paragraph = document.getElementById("responseBody");
-        if (data.body != undefined) {
+        // if (data.body != undefined) {
           paragraph.innerHTML = data.body;
-        } else {
-          paragraph.innerHTML = "There was an error somewhere along the chain."
-        }
+        // } else {
+        //   paragraph.innerHTML = "There was an error somewhere along the chain."
+        // }
       });
     </script>
   </body>
