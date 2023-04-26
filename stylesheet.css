@@ -5,7 +5,7 @@ body {
     height: auto;
     display: block;
     background: rgb(38, 38, 53);
-    padding: 0px 24px 0px 24px;
+    padding: 0px 24px 64px 24px;
 }
 
 h1 {
@@ -37,12 +37,33 @@ button {
 #responseBody {
     border-style: solid;
     border-color:rgba(255, 255, 255, 0.267);
-    padding: 6px 8px 6px 8px;
+    border-width: 0px 0px 0px 5px;
+    padding: 4px 8px 6px 8px;
     margin-top: 32px;
     line-height: 32px;
+    min-height: 96px;
 }
 #footnote {
     color: rgba(255, 255, 255, 0.3);
     font-size: 16px;
     width: 90%;
+    margin-top: 48px;
+}
+
+a:link, a:visited {
+    color: rgba(255, 255, 255, 0.5);
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(255, 255, 255);
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:active {
+    color: rgb(255, 255, 255);
+    background-color: transparent;
+    text-decoration: underline;
 }
