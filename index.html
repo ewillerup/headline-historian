@@ -10,12 +10,17 @@
   <body>
     <h1>Headline Historian</h1>
     <h2><i>Understand the world better</i></h2>
+    <hr>
+    <br>
       <input type="text" id="input" name="input" placeholder="Link or headline">
     <div id="response"></div>
     <br>
     <button id="apiButton">Generate</button>
 
-    <p id=responseBody>Awaiting your headline...</p>
+    <p id=responseBody>
+      Awaiting the news... 
+      <br>Paste a link or headline and click "Generate."
+    </p>
 
     <script>
       const button = document.getElementById("apiButton");
@@ -26,18 +31,16 @@
           headers: {
             "Content-Type": "application/json"
           },
-          body: JSON.stringify({
-            headline: input
-          })
+          body: JSON.stringify(input)
         });
         const data = await response.json();
         console.log(data);
         var paragraph = document.getElementById("responseBody");
-        // if (data.body != undefined) {
+        if (data.body != undefined) {
           paragraph.innerHTML = data.body;
-        // } else {
-        //   paragraph.innerHTML = "There was an error somewhere along the chain."
-        // }
+        } else {
+          paragraph.innerHTML = "There was an error somewhere along the chain."
+        }
       });
     </script>
   </body>

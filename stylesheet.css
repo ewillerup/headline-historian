@@ -1,14 +1,16 @@
 body {
-    min-width: 20%;
-    max-width: 300px;
+    min-width: 10%;
+    max-width: 400px;
     margin: auto;
     height: auto;
     display: block;
     background: rgb(38, 38, 53);
+    padding: 0px 24px 0px 24px;
 }
 
 h1 {
     color: white;
+    margin-bottom: -8px;
 }
 h2 {
     color: white;
@@ -17,9 +19,10 @@ p {
     color: white;
     font-size: 16px;
     font-family: Georgia, serif;
+    line-height: 28px;
 }
 input {
-    width: 100%;
+    width: 96%;
     margin: auto;
     padding: 6px;
 }
@@ -36,4 +39,7 @@ button {
     border-style: solid;
     border-color:rgba(255, 255, 255, 0.267);
     padding: 8px;
+    width: 101%;
+    margin-left: -4%;
+    margin-top: 32px;
 }
