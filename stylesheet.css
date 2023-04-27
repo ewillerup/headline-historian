@@ -31,7 +31,8 @@ button {
     font-size: 14px;
     width: 150px;
     margin: auto;
-    background-color: rgb(221, 216, 193);
+    color:rgb(15, 15, 15);
+    background-color: rgb(223, 223, 223);
 }
 
 #responseBody {
@@ -40,7 +41,7 @@ button {
     border-width: 0px 0px 0px 5px;
     padding: 4px 8px 6px 8px;
     margin-top: 32px;
-    line-height: 32px;
+    line-height: 30px;
     min-height: 96px;
 }
 #footnote {

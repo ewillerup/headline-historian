@@ -12,14 +12,14 @@
     <h2><i>Understand the news better</i></h2>
     <hr>
     <br>
-      <input type="text" id="input" name="input" placeholder="Link or headline">
+      <input type="text" id="input" name="input" placeholder="News article link or headline">
     <div id="response"></div>
     <br>
     <button id="apiButton">Generate</button>
 
     <p id=responseBody>
       Awaiting the news... 
-      <br>Paste a link or headline and click "Generate."
+      <br>Paste a link or a headline above and click 'Generate.'
     </p>
 
     <script>
@@ -29,19 +29,23 @@
         paragraph.innerHTML = "<br>";
         button.innerHTML = "Working...";
         const input = document.getElementById("input").value;
-        const response = await fetch("https://m8hse7s2pi.execute-api.us-east-1.amazonaws.com/thirdDeploy", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(input)
-        });
-        const data = await response.json();
-        console.log(data);
-        if (data.body != undefined) {
-          paragraph.innerHTML = data.body;
+        if (input != "") {
+          const response = await fetch("https://m8hse7s2pi.execute-api.us-east-1.amazonaws.com/thirdDeploy", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(input)
+          });
+          const data = await response.json();
+          console.log(data);
+          if (data.body != undefined) {
+            paragraph.innerHTML = data.body;
+          } else {
+            paragraph.innerHTML = "There was an error somewhere along the chain."
+          }
         } else {
-          paragraph.innerHTML = "There was an error somewhere along the chain."
+          paragraph.innerHTML = "The input field is empty, please enter or a headline or a link to an article and click 'Generate.'"
         }
         button.innerHTML = "Generate";
       });
@@ -50,9 +54,9 @@
     <p id=footnote><i>
       Headline Historian provides deeper insights into world events. 
       We hope it will guide your research as you dig deeper into the news you care about. 
-      It is not comprehensive, so we encourage you to use it as a starting point.
+      It is not comprehensive and we encourage you to use it as a starting point for further learning.
       <br><br>
-      Please remember that any source or technology will sometimes produce incorrect or biased information. 
+      Please remember that any media outlet will sometimes produce incorrect or biased information. 
       You should always cross-check your conclusions with a diverse range of sources.
       <br><br>
       Made by <a href=https://www.artstation.com/farahelholt>Noah Harris</a> 
